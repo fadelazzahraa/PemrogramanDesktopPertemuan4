@@ -1,7 +1,7 @@
-using Microsoft.VisualBasic.Devices;
+﻿using Microsoft.VisualBasic.Devices;
 using System.Windows.Forms;
 
-namespace PemrogramanDesktopPertemuan4
+namespace PemrogramanDesktopFadelAzzahra
 {
     public partial class Form1 : Form
     {
