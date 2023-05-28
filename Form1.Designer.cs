@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             label2 = new Label();
             comboBox1 = new ComboBox();
@@ -43,6 +44,12 @@
             button1 = new Button();
             label7 = new Label();
             label8 = new Label();
+            printPreviewControl1 = new PrintPreviewControl();
+            button2 = new Button();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            button3 = new Button();
+            printPreviewDialog1 = new PrintPreviewDialog();
+            printDialog1 = new PrintDialog();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
@@ -169,13 +176,12 @@
             // 
             // button1
             // 
-            button1.Dock = DockStyle.Bottom;
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button1.Location = new Point(0, 394);
             button1.Name = "button1";
-            button1.Size = new Size(380, 48);
+            button1.Size = new Size(353, 48);
             button1.TabIndex = 14;
-            button1.Text = "Checkout!";
+            button1.Text = "Buat struk";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -200,11 +206,67 @@
             label8.TabIndex = 16;
             label8.Text = "Harga";
             // 
+            // printPreviewControl1
+            // 
+            printPreviewControl1.AutoZoom = false;
+            printPreviewControl1.Location = new Point(359, 12);
+            printPreviewControl1.Name = "printPreviewControl1";
+            printPreviewControl1.Size = new Size(341, 314);
+            printPreviewControl1.TabIndex = 17;
+            printPreviewControl1.Zoom = 0.6D;
+            // 
+            // button2
+            // 
+            button2.Enabled = false;
+            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(359, 394);
+            button2.Name = "button2";
+            button2.Size = new Size(353, 48);
+            button2.TabIndex = 18;
+            button2.Text = "Cetak struk";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // printDocument1
+            // 
+            printDocument1.PrintPage += printDocument1_PrintPage;
+            // 
+            // button3
+            // 
+            button3.Enabled = false;
+            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Location = new Point(359, 340);
+            button3.Name = "button3";
+            button3.Size = new Size(353, 48);
+            button3.TabIndex = 19;
+            button3.Text = "Print preview";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // printPreviewDialog1
+            // 
+            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
+            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
+            printPreviewDialog1.ClientSize = new Size(400, 300);
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Enabled = true;
+            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
+            printPreviewDialog1.Name = "printPreviewDialog1";
+            printPreviewDialog1.Visible = false;
+            // 
+            // printDialog1
+            // 
+            printDialog1.Document = printDocument1;
+            printDialog1.UseEXDialog = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(380, 442);
+            ClientSize = new Size(712, 442);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(printPreviewControl1);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(button1);
@@ -248,5 +310,11 @@
         private Button button1;
         private Label label7;
         private Label label8;
+        private PrintPreviewControl printPreviewControl1;
+        private Button button2;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private Button button3;
+        private PrintPreviewDialog printPreviewDialog1;
+        private PrintDialog printDialog1;
     }
 }

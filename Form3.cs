@@ -14,10 +14,12 @@ namespace PemrogramanDesktopFadelAzzahra
     public partial class Form3 : Form
     {
         private readonly bool isAdmin;
-        public Form3(bool isAdmin)
+        private readonly List<User> users;
+        public Form3(bool isAdmin, List<User> users)
         {
             InitializeComponent();
             this.isAdmin = isAdmin;
+            this.users = users;
         }
 
         private void formPenjualanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +41,16 @@ namespace PemrogramanDesktopFadelAzzahra
 
         private void menuUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Anda menekan tombol Menu User");
+            string listuser = "";
+            
+            foreach (User user in users)
+            {
+                string username = user.Username;
+                string role = user.Admin == true ? "Admin" : "User";
+                listuser += $"{username} ({role})";
+                listuser += "\n";
+            }
+            MessageBox.Show("Daftar user " + "\n\n" + listuser);
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
