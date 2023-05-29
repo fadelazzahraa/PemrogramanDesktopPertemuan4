@@ -1,0 +1,5 @@
+Username,Password,Role
+user,password,Kasir
+admin,adminpassword,Admin
+bosbesar,boskuh,Manager
+guest,guest,guest

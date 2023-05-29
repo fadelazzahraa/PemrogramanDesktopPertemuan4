@@ -1,6 +1,6 @@
 ﻿namespace PemrogramanDesktopFadelAzzahra
 {
-    partial class Form3
+    partial class FormMainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,21 @@
         {
             menuStrip1 = new MenuStrip();
             formPenjualanToolStripMenuItem = new ToolStripMenuItem();
-            menuUserToolStripMenuItem = new ToolStripMenuItem();
-            label1 = new Label();
+            kelolaUserToolStripMenuItem = new ToolStripMenuItem();
+            kelolaBarangToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            logoutToolStripMenuItem = new ToolStripMenuItem();
+            toolStripStatusLabel2 = new ToolStripStatusLabel();
+            toolStripStatusLabel3 = new ToolStripStatusLabel();
+            label2 = new Label();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { formPenjualanToolStripMenuItem, menuUserToolStripMenuItem, logoutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { formPenjualanToolStripMenuItem, kelolaUserToolStripMenuItem, kelolaBarangToolStripMenuItem, logoutToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(465, 24);
@@ -55,28 +58,30 @@
             formPenjualanToolStripMenuItem.Text = "Form Penjualan";
             formPenjualanToolStripMenuItem.Click += formPenjualanToolStripMenuItem_Click;
             // 
-            // menuUserToolStripMenuItem
+            // kelolaUserToolStripMenuItem
             // 
-            menuUserToolStripMenuItem.Name = "menuUserToolStripMenuItem";
-            menuUserToolStripMenuItem.Size = new Size(76, 20);
-            menuUserToolStripMenuItem.Text = "Menu User";
-            menuUserToolStripMenuItem.Click += menuUserToolStripMenuItem_Click;
+            kelolaUserToolStripMenuItem.Name = "kelolaUserToolStripMenuItem";
+            kelolaUserToolStripMenuItem.Size = new Size(77, 20);
+            kelolaUserToolStripMenuItem.Text = "Kelola User";
+            kelolaUserToolStripMenuItem.Click += menuUserToolStripMenuItem_Click;
             // 
-            // label1
+            // kelolaBarangToolStripMenuItem
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(12, 54);
-            label1.Name = "label1";
-            label1.Size = new Size(438, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Main Menu Aplikasi Pemesanan Kopi";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            kelolaBarangToolStripMenuItem.Name = "kelolaBarangToolStripMenuItem";
+            kelolaBarangToolStripMenuItem.Size = new Size(91, 20);
+            kelolaBarangToolStripMenuItem.Text = "Kelola Barang";
+            kelolaBarangToolStripMenuItem.Click += kelolaBarangToolStripMenuItem_Click;
+            // 
+            // logoutToolStripMenuItem
+            // 
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(57, 20);
+            logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel2, toolStripStatusLabel3 });
             statusStrip1.Location = new Point(0, 143);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(465, 22);
@@ -89,23 +94,41 @@
             toolStripStatusLabel1.Size = new Size(39, 17);
             toolStripStatusLabel1.Text = "Ready";
             // 
-            // logoutToolStripMenuItem
+            // toolStripStatusLabel2
             // 
-            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(57, 20);
-            logoutToolStripMenuItem.Text = "Logout";
-            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
+            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            toolStripStatusLabel2.Size = new Size(10, 17);
+            toolStripStatusLabel2.Text = "|";
             // 
-            // Form3
+            // toolStripStatusLabel3
+            // 
+            toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            toolStripStatusLabel3.Size = new Size(74, 17);
+            toolStripStatusLabel3.Text = "Logged in as";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label2.BackColor = Color.White;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.GrayText;
+            label2.Location = new Point(125, 60);
+            label2.Name = "label2";
+            label2.Size = new Size(214, 45);
+            label2.TabIndex = 5;
+            label2.Text = "Coffee! Shop";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // FormMainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(465, 165);
+            Controls.Add(label2);
             Controls.Add(statusStrip1);
-            Controls.Add(label1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form3";
+            Name = "FormMainMenu";
             Text = "Main Menu";
             Load += Form3_Load;
             menuStrip1.ResumeLayout(false);
@@ -120,10 +143,13 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem formPenjualanToolStripMenuItem;
-        private ToolStripMenuItem menuUserToolStripMenuItem;
-        private Label label1;
+        private ToolStripMenuItem kelolaUserToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripMenuItem logoutToolStripMenuItem;
+        private Label label2;
+        private ToolStripMenuItem kelolaBarangToolStripMenuItem;
+        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel toolStripStatusLabel3;
     }
 }

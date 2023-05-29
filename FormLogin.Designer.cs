@@ -1,6 +1,6 @@
 ﻿namespace PemrogramanDesktopFadelAzzahra
 {
-    partial class Form2
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,44 +29,33 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
-            label1 = new Label();
             textBox2 = new TextBox();
             button1 = new Button();
             openFileDialog1 = new OpenFileDialog();
+            label2 = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(21, 66);
+            textBox1.Location = new Point(55, 133);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Username";
-            textBox1.Size = new Size(144, 23);
+            textBox1.Size = new Size(214, 23);
             textBox1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(21, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(144, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Login Form";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(21, 95);
+            textBox2.Location = new Point(55, 162);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Password";
-            textBox2.Size = new Size(144, 23);
+            textBox2.Size = new Size(214, 23);
             textBox2.TabIndex = 2;
             textBox2.UseSystemPasswordChar = true;
             // 
             // button1
             // 
-            button1.Location = new Point(21, 143);
+            button1.Location = new Point(90, 206);
             button1.Name = "button1";
             button1.Size = new Size(144, 23);
             button1.TabIndex = 3;
@@ -78,19 +67,45 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Form2
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.GrayText;
+            label2.Location = new Point(55, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(214, 45);
+            label2.TabIndex = 4;
+            label2.Text = "Coffee! Shop";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Highlight;
+            label1.Location = new Point(103, 94);
+            label1.Name = "label1";
+            label1.Size = new Size(115, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Login Form";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // FormLogin
             // 
             AcceptButton = button1;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(192, 200);
+            ClientSize = new Size(333, 262);
+            Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(textBox2);
             Controls.Add(label1);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Form2";
-            Text = "Login Form";
+            Name = "FormLogin";
+            Text = "Coffee! Shop Login Form";
             Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -99,9 +114,10 @@
         #endregion
 
         private TextBox textBox1;
-        private Label label1;
         private TextBox textBox2;
         private Button button1;
         private OpenFileDialog openFileDialog1;
+        private Label label2;
+        private Label label1;
     }
 }

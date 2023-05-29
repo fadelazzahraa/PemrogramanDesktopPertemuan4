@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace PemrogramanDesktopFadelAzzahra
 {
-    public partial class Form2 : Form
+    public partial class FormLogin : Form
     {
         private List<User> users = new List<User>();
 
-        public Form2()
+        public FormLogin()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace PemrogramanDesktopFadelAzzahra
             string[] rawDatabase;
             try
             {
-                rawDatabase = File.ReadAllLines(@"D:\Data\Documents\VisualStudioProjects\PemrogramanDesktopPertemuan4\database.txt");
+                rawDatabase = File.ReadAllLines(@"D:\Data\Documents\VisualStudioProjects\PemrogramanDesktopPertemuan4\data_user.txt");
             }
             catch (Exception e)
             {
@@ -43,7 +43,7 @@ namespace PemrogramanDesktopFadelAzzahra
                 {
                     MessageBox.Show("File gagal dipilih. Tidak ada user yang dapat digunakan untuk login!");
                     string[] defaultData = new string[1];
-                    defaultData[0] = "Username,Password,IsAdmin";
+                    defaultData[0] = "Username,Password,Role";
                     rawDatabase = defaultData;
 
                 }
@@ -53,12 +53,12 @@ namespace PemrogramanDesktopFadelAzzahra
             List<User> tempusers = new List<User>();
             foreach (string rawData in rawDatabase)
             {
-                if (rawData == "Username,Password,IsAdmin")
+                if (rawData == "Username,Password,Role")
                 {
                     continue;
                 }
                 string[] rawDataSplitted = rawData.Split(',');
-                tempusers.Add(new User(rawDataSplitted[0], rawDataSplitted[1], rawDataSplitted[2] == "true" ? true : false));
+                tempusers.Add(new User(rawDataSplitted[0], rawDataSplitted[1], rawDataSplitted[2]));
             }
             return tempusers;
 
@@ -76,7 +76,7 @@ namespace PemrogramanDesktopFadelAzzahra
                 if (result.Password == pass)
                 {
                     this.Hide();
-                    Form3 form3 = new Form3(result.Admin, users);
+                    FormMainMenu form3 = new FormMainMenu(result);
                     form3.Closed += (s, args) =>
                     {
                         this.Close();
