@@ -24,6 +24,14 @@ namespace PemrogramanDesktopFadelAzzahra
         {
             products = InitializeProductDatabase();
             dataGridView1.DataSource = products;
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "deleteAction";
+                button.HeaderText = "";
+                button.Text = "Delete";
+                button.UseColumnTextForButtonValue = true; //dont forget this line
+                this.dataGridView1.Columns.Add(button);
+            }
         }
 
         private void dataGridView1_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
@@ -113,6 +121,20 @@ namespace PemrogramanDesktopFadelAzzahra
         private void button2_Click(object sender, EventArgs e)
         {
             products.Add(new Product("", 0, 0));
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["deleteAction"].Index)
+            {
+                MessageBox.Show(e.RowIndex.ToString());
+            }
+        }
+
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            MessageBox.Show(e.ColumnIndex.ToString());
+
         }
     }
 }
