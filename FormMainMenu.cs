@@ -84,5 +84,12 @@ namespace PemrogramanDesktopFadelAzzahra
             /*form1.Closed += (s, args) => this.Close();*/
             formRiwayatTransaksi.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormChatBot formRiwayatTransaksi = new FormChatBot();
+            /*form1.Closed += (s, args) => this.Close();*/
+            formRiwayatTransaksi.Show();
+        }
     }
 }

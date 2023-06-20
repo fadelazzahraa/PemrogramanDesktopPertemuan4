@@ -32,13 +32,14 @@
             formPenjualanToolStripMenuItem = new ToolStripMenuItem();
             kelolaUserToolStripMenuItem = new ToolStripMenuItem();
             kelolaBarangToolStripMenuItem = new ToolStripMenuItem();
+            riwayatTransaksiToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             toolStripStatusLabel3 = new ToolStripStatusLabel();
             label2 = new Label();
-            riwayatTransaksiToolStripMenuItem = new ToolStripMenuItem();
+            button1 = new Button();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -48,7 +49,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { formPenjualanToolStripMenuItem, kelolaUserToolStripMenuItem, kelolaBarangToolStripMenuItem, riwayatTransaksiToolStripMenuItem, logoutToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(465, 24);
+            menuStrip1.Size = new Size(536, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -73,6 +74,13 @@
             kelolaBarangToolStripMenuItem.Text = "Kelola Barang";
             kelolaBarangToolStripMenuItem.Click += kelolaBarangToolStripMenuItem_Click;
             // 
+            // riwayatTransaksiToolStripMenuItem
+            // 
+            riwayatTransaksiToolStripMenuItem.Name = "riwayatTransaksiToolStripMenuItem";
+            riwayatTransaksiToolStripMenuItem.Size = new Size(110, 20);
+            riwayatTransaksiToolStripMenuItem.Text = "Riwayat Transaksi";
+            riwayatTransaksiToolStripMenuItem.Click += riwayatTransaksiToolStripMenuItem_Click;
+            // 
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
@@ -83,9 +91,9 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel2, toolStripStatusLabel3 });
-            statusStrip1.Location = new Point(0, 143);
+            statusStrip1.Location = new Point(0, 189);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(465, 22);
+            statusStrip1.Size = new Size(536, 22);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -113,25 +121,30 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.GrayText;
-            label2.Location = new Point(125, 60);
+            label2.Location = new Point(149, 62);
             label2.Name = "label2";
-            label2.Size = new Size(214, 45);
+            label2.Size = new Size(240, 91);
             label2.TabIndex = 5;
             label2.Text = "Coffee! Shop";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // riwayatTransaksiToolStripMenuItem
+            // button1
             // 
-            riwayatTransaksiToolStripMenuItem.Name = "riwayatTransaksiToolStripMenuItem";
-            riwayatTransaksiToolStripMenuItem.Size = new Size(110, 20);
-            riwayatTransaksiToolStripMenuItem.Text = "Riwayat Transaksi";
-            riwayatTransaksiToolStripMenuItem.Click += riwayatTransaksiToolStripMenuItem_Click;
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.Location = new Point(432, 125);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 61);
+            button1.TabIndex = 6;
+            button1.Text = "💬\r\nOpen ChatBot!";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FormMainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(465, 165);
+            ClientSize = new Size(536, 211);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
@@ -160,5 +173,6 @@
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripStatusLabel toolStripStatusLabel3;
         private ToolStripMenuItem riwayatTransaksiToolStripMenuItem;
+        private Button button1;
     }
 }
