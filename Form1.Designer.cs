@@ -28,293 +28,215 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            button1 = new Button();
+            button2 = new Button();
+            dataGridView1 = new DataGridView();
             label1 = new Label();
+            textBox1 = new TextBox();
             label2 = new Label();
+            textBox2 = new TextBox();
+            pictureBox1 = new PictureBox();
             comboBox1 = new ComboBox();
             label3 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
             label4 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
             label5 = new Label();
-            label6 = new Label();
-            checkedListBox1 = new CheckedListBox();
-            button1 = new Button();
-            label7 = new Label();
-            label8 = new Label();
-            printPreviewControl1 = new PrintPreviewControl();
-            button2 = new Button();
-            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            numericUpDown1 = new NumericUpDown();
+            comboBox2 = new ComboBox();
             button3 = new Button();
-            printPreviewDialog1 = new PrintPreviewDialog();
-            printDialog1 = new PrintDialog();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(12, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 0;
+            button1.Text = "Write";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(12, 41);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 1;
+            button2.Text = "Read";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(319, 12);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(494, 166);
+            dataGridView1.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Highlight;
-            label1.Location = new Point(39, 9);
+            label1.Location = new Point(104, 16);
             label1.Name = "label1";
-            label1.Size = new Size(300, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Aplikasi Pemesanan Kopi";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Size = new Size(39, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Nama";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(173, 13);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(140, 23);
+            textBox1.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(25, 65);
+            label2.Location = new Point(104, 45);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Varian Kopi";
+            label2.Size = new Size(45, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Alamat";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(173, 42);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(140, 23);
+            textBox2.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Location = new Point(319, 184);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(250, 250);
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // comboBox1
             // 
+            comboBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Espresso - Rp10.000,00", "Latte - Rp15.000,00", "Cappuccino - Rp12.000,00" });
-            comboBox1.Location = new Point(113, 62);
+            comboBox1.Location = new Point(199, 184);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(226, 23);
-            comboBox1.TabIndex = 2;
-            comboBox1.Text = "Espresso - Rp10.000,00";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.Size = new Size(114, 23);
+            comboBox1.TabIndex = 10;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
-            label3.Location = new Point(25, 93);
+            label3.Location = new Point(130, 188);
             label3.Name = "label3";
-            label3.Size = new Size(45, 15);
-            label3.TabIndex = 3;
-            label3.Text = "Ukuran";
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(113, 91);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(70, 19);
-            radioButton1.TabIndex = 4;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Medium";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton_CheckedChanged;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(189, 91);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(150, 19);
-            radioButton2.TabIndex = 5;
-            radioButton2.Text = "Large (extra Rp2.000,00)";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton_CheckedChanged;
+            label3.Size = new Size(63, 15);
+            label3.TabIndex = 11;
+            label3.Text = "Pelanggan";
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
-            label4.Location = new Point(25, 122);
+            label4.Location = new Point(130, 217);
             label4.Name = "label4";
-            label4.Size = new Size(82, 15);
-            label4.TabIndex = 6;
-            label4.Text = "Level Gula (%)";
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Increment = new decimal(new int[] { 25, 0, 0, 0 });
-            numericUpDown1.Location = new Point(113, 120);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(86, 23);
-            numericUpDown1.TabIndex = 7;
-            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Increment = new decimal(new int[] { 25, 0, 0, 0 });
-            numericUpDown2.Location = new Point(113, 149);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(86, 23);
-            numericUpDown2.TabIndex = 9;
-            numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
+            label4.Size = new Size(51, 15);
+            label4.TabIndex = 12;
+            label4.Text = "Pesanan";
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
-            label5.Location = new Point(25, 151);
+            label5.Location = new Point(130, 244);
             label5.Name = "label5";
-            label5.Size = new Size(69, 15);
-            label5.TabIndex = 8;
-            label5.Text = "Level Es (%)";
+            label5.Size = new Size(45, 15);
+            label5.TabIndex = 13;
+            label5.Text = "Jumlah";
             // 
-            // label6
+            // numericUpDown1
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(25, 180);
-            label6.Name = "label6";
-            label6.Size = new Size(62, 15);
-            label6.TabIndex = 10;
-            label6.Text = "Tambahan";
+            numericUpDown1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            numericUpDown1.Location = new Point(199, 242);
+            numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(114, 23);
+            numericUpDown1.TabIndex = 14;
+            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // checkedListBox1
+            // comboBox2
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "Bubble + Rp3.000,00", "Grass Jelly + Rp3.500,00", "Nata de coco + Rp2.500,00", "Whipped cream + Rp1.000,00", "Choco chip + Rp1.500,00", "Oreo + Rp2.000,00" });
-            checkedListBox1.Location = new Point(113, 178);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(226, 112);
-            checkedListBox1.TabIndex = 11;
-            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(0, 394);
-            button1.Name = "button1";
-            button1.Size = new Size(353, 48);
-            button1.TabIndex = 14;
-            button1.Text = "Buat struk";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.ForestGreen;
-            label7.Location = new Point(25, 326);
-            label7.Name = "label7";
-            label7.Size = new Size(94, 32);
-            label7.TabIndex = 15;
-            label7.Text = "Rp0,00";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(25, 311);
-            label8.Name = "label8";
-            label8.Size = new Size(39, 15);
-            label8.TabIndex = 16;
-            label8.Text = "Harga";
-            // 
-            // printPreviewControl1
-            // 
-            printPreviewControl1.AutoZoom = false;
-            printPreviewControl1.Location = new Point(359, 12);
-            printPreviewControl1.Name = "printPreviewControl1";
-            printPreviewControl1.Size = new Size(341, 314);
-            printPreviewControl1.TabIndex = 17;
-            printPreviewControl1.Zoom = 0.6D;
-            // 
-            // button2
-            // 
-            button2.Enabled = false;
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(359, 394);
-            button2.Name = "button2";
-            button2.Size = new Size(353, 48);
-            button2.TabIndex = 18;
-            button2.Text = "Cetak struk";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // printDocument1
-            // 
-            printDocument1.PrintPage += printDocument1_PrintPage;
+            comboBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Barang 1", "Barang 2", "Barang 3" });
+            comboBox2.Location = new Point(199, 213);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(114, 23);
+            comboBox2.TabIndex = 15;
             // 
             // button3
             // 
-            button3.Enabled = false;
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(359, 340);
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button3.Location = new Point(12, 184);
             button3.Name = "button3";
-            button3.Size = new Size(353, 48);
-            button3.TabIndex = 19;
-            button3.Text = "Print preview";
+            button3.Size = new Size(112, 81);
+            button3.TabIndex = 8;
+            button3.Text = "Pesan dan Generate QR Code";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
-            // 
-            // printPreviewDialog1
-            // 
-            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
-            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
-            printPreviewDialog1.ClientSize = new Size(400, 300);
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.Enabled = true;
-            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
-            printPreviewDialog1.Name = "printPreviewDialog1";
-            printPreviewDialog1.Visible = false;
-            // 
-            // printDialog1
-            // 
-            printDialog1.Document = printDocument1;
-            printDialog1.UseEXDialog = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(712, 442);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(printPreviewControl1);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(checkedListBox1);
-            Controls.Add(label6);
-            Controls.Add(numericUpDown2);
-            Controls.Add(label5);
+            ClientSize = new Size(825, 446);
+            Controls.Add(comboBox2);
             Controls.Add(numericUpDown1);
+            Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
             Controls.Add(label3);
             Controls.Add(comboBox1);
+            Controls.Add(button3);
+            Controls.Add(pictureBox1);
+            Controls.Add(textBox2);
             Controls.Add(label2);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Controls.Add(dataGridView1);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            MinimumSize = new Size(597, 372);
             Name = "Form1";
-            Text = "Aplikasi Pemesanan Kopi - Fadel Azzahra";
+            Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Button button1;
+        private Button button2;
+        private DataGridView dataGridView1;
         private Label label1;
+        private TextBox textBox1;
         private Label label2;
+        private TextBox textBox2;
+        private PictureBox pictureBox1;
         private ComboBox comboBox1;
         private Label label3;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
         private Label label4;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
         private Label label5;
-        private Label label6;
-        private CheckedListBox checkedListBox1;
-        private Button button1;
-        private Label label7;
-        private Label label8;
-        private PrintPreviewControl printPreviewControl1;
-        private Button button2;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private NumericUpDown numericUpDown1;
+        private ComboBox comboBox2;
         private Button button3;
-        private PrintPreviewDialog printPreviewDialog1;
-        private PrintDialog printDialog1;
     }
 }

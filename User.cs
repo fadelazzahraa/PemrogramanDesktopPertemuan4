@@ -8,16 +8,16 @@ namespace PemrogramanDesktopFadelAzzahra
 {
     public class User
     {
-        public User(string username, string password, bool isadmin)
+        public User(string username, string password, string role)
         {
             _username = username;
             _password = password;
-            _isadmin = isadmin;
+            _role = role;
         }
 
         private string _username;
         private string _password;
-        private bool _isadmin;
+        private string _role;
 
         public string Username
         {
@@ -31,10 +31,10 @@ namespace PemrogramanDesktopFadelAzzahra
             set { _password = value; }
         }
 
-        public bool Admin
+        public string Role
         {
-            get { return _isadmin; }
-            set { _isadmin = value; }
+            get { return _role; }
+            set { _role = value; }
         }
 
     }

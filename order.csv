@@ -1,0 +1,13 @@
+Id,Pelanggan,Item,Jumlah,Email,Waktu
+a115ab6f-7d1a-4dad-b234-716abcbdf732,Fadel,Barang 1,2,,06/12/2023 10:39:12
+4e125ae4-381c-4339-96d9-8277d1ec1f82,Fadel,Barang 2,2,,06/12/2023 10:39:31
+09cf5ac8-b8bd-4290-8bd5-e502c61daee3,Fadel,Barang 3,3,,06/12/2023 10:39:49
+66a022a3-bf2d-42db-92fa-7f079b609651,Pelanggan 1,Barang 1,1,,06/12/2023 10:42:19
+32fce12e-392b-4f97-962c-b3cbfb5fb08d,Fadel Azzahra,Cappucinno,0,,06/13/2023 09:54:11
+d22db11b-e965-4deb-a259-571c882e6dcf,Faza,Machiato,0,fadel.azzahra@gmail.com,06/13/2023 09:57:30
+0e96f377-6938-4aff-9c55-a6cdd3d07926,Fadel,Americano,1,fadel.fadel@gmail.com,06/13/2023 10:00:42
+acfd8306-cb02-46a9-8e5d-896c76334c41,a,Americano,1,a,06/13/2023 10:02:05
+930777bf-eba6-4de3-ac8e-b46213ec2a69,Fadel,Espresso,1,fadel.faza@gmail.com,06/13/2023 15:25:27
+4f5928b7-1afe-43d8-bc6e-73314bd5e6dd,aa,Choco Lava,1,fadel.faza@gmail.com,06/13/2023 15:27:53
+36fa2699-91c9-49ec-9ddd-742c829e16cb,Fadel Faza,Machiato,2,fadel.faza@gmail.com,06/13/2023 15:58:40
+3bdab0a0-7b77-457d-af2a-744e7c59191d,Fadel Azz,Americano,13,fadel.dummy2@gmail.com,06/13/2023 16:11:56

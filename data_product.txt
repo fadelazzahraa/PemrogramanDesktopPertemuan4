@@ -1,0 +1,6 @@
+Product,Qty,Price
+Cappucinno,1011,10000
+Machiato,16,20000
+Americano,0,15000
+Espresso,2,13000
+Choco Lava,1,15000

@@ -1,8 +1,16 @@
-﻿using Microsoft.VisualBasic.Devices;
-using System.Drawing.Printing;
+﻿using CsvHelper;
+using CsvHelper.Configuration;
+using QRCoder;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.AxHost;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PemrogramanDesktopFadelAzzahra
 {
@@ -13,253 +21,78 @@ namespace PemrogramanDesktopFadelAzzahra
             InitializeComponent();
         }
 
-        public int coffeeTypeOption = 0; // by index
-        public int coffeeSize = 0; // 0 for medium, 1 for large
-        public int coffeeSugar = 0;
-        public int coffeeIce = 0;
-        public bool[] coffeeAddOnOption = new bool[6];
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            coffeeTypeOption = comboBox1.SelectedIndex;
-            refreshPriceOnLabel();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            coffeeAddOnOption[0] = false;
-            coffeeAddOnOption[1] = false;
-            coffeeAddOnOption[2] = false;
-            coffeeAddOnOption[3] = false;
-            coffeeAddOnOption[4] = false;
-            coffeeAddOnOption[5] = false;
-            refreshPriceOnLabel();
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Kertas Struk", 400, 700);
-        }
-
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton1.Checked == true)
-            {
-                coffeeSize = 0;
-            }
-            else if (radioButton2.Checked == true)
-            {
-                coffeeSize = 1;
-            }
-            refreshPriceOnLabel();
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            coffeeSugar = (int)numericUpDown1.Value;
-            refreshPriceOnLabel();
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-            coffeeIce = (int)numericUpDown2.Value;
-            refreshPriceOnLabel();
-        }
-
-        private int calculateCoffeePrice()
-        {
-            int price = 0;
-
-            if (coffeeTypeOption == 0)
-            {
-                price += 10000;
-            }
-            else if (coffeeTypeOption == 1)
-            {
-                price += 15000;
-            }
-            else if (coffeeTypeOption == 2)
-            {
-                price += 12000;
-            }
-
-            if (coffeeSize == 1)
-            {
-                price += 2000;
-            }
-
-            if (checkedListBox1.GetItemCheckState(0).ToString() == "Checked")
-            {
-                price += 3000;
-            }
-            if (checkedListBox1.GetItemCheckState(1).ToString() == "Checked")
-            {
-                price += 3500;
-            }
-            if (checkedListBox1.GetItemCheckState(2).ToString() == "Checked")
-            {
-                price += 2500;
-            }
-            if (checkedListBox1.GetItemCheckState(3).ToString() == "Checked")
-            {
-                price += 1000;
-            }
-            if (checkedListBox1.GetItemCheckState(4).ToString() == "Checked")
-            {
-                price += 1500;
-            }
-            if (checkedListBox1.GetItemCheckState(5).ToString() == "Checked")
-            {
-                price += 2000;
-            }
-
-            return price;
-        }
-
-        private void refreshPriceOnLabel()
-        {
-            label7.Text = $"Rp{calculateCoffeePrice()},00";
-        }
+        private int i = 0;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*Kode Lama*/
-
-            /*MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show($"Harga kopi Anda Rp{calculateCoffeePrice().ToString()}. Apakah Anda ingin melanjutkan pemesanan?", "Checkout", buttons);
-            if (result == DialogResult.Yes)
-            {
-
-                MessageBox.Show("Terima kasih telah memesan!", "Terima kasih!");
-            }
-            else
-            {
-                MessageBox.Show("Anda membatalkan pesanan", "Yaahh...");
-            }*/
-
-            printPreviewControl1.Document = printDocument1;
-            button2.Enabled = true;
-            button3.Enabled = true;
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            refreshPriceOnLabel();
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Graphics graphics = e.Graphics;
-            Font fontRegular = new Font("Consolas", 12);
-            Font fontBold = new Font("Consolas", 12, FontStyle.Bold);
-            Font fontTitle = new Font("Consolas", 16, FontStyle.Bold);
-            Brush brush = new SolidBrush(Color.Black);
-
-            int startX = 10;
-            int startY = 10;
-            int offset = 40;
-
-            string coffeeTypeOptionToString;
-            switch (coffeeTypeOption)
-            {
-                case 0:
-                    coffeeTypeOptionToString = "Espresso";
-                    break;
-                case 1:
-                    coffeeTypeOptionToString = "Latte";
-                    break;
-                case 2:
-                    coffeeTypeOptionToString = "Cappuccino";
-                    break;
-                default:
-                    coffeeTypeOptionToString = "Tipe Kopi";
-                    break;
-            }
-            string coffeeSizeToString;
-            switch (coffeeSize)
-            {
-                case 0:
-                    coffeeSizeToString = "Medium";
-                    break;
-                case 1:
-                    coffeeSizeToString = "Large";
-                    break;
-
-                default:
-                    coffeeSizeToString = "Ukuran Kopi";
-                    break;
-            }
-
-            // Judul struk
-            graphics.DrawString("Fadel Azzahra Coffee Shop", fontTitle, brush, startX, startY);
-            graphics.DrawString("------------------------------------", fontRegular, brush, startX, startY + offset);
-
-            // Detail pesanan
-            offset += 20;
-            graphics.DrawString("Jenis Kopi  : " + coffeeTypeOptionToString, fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString("Ukuran Kopi : " + coffeeSizeToString, fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString("Level Gula  : " + coffeeSugar, fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString("Level Es    : " + coffeeIce, fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString("Topping     : ", fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString((checkedListBox1.GetItemCheckState(0).ToString() == "Checked" ? "✅ " : "❌ ") + "Bubble", fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString((checkedListBox1.GetItemCheckState(1).ToString() == "Checked" ? "✅ " : "❌ ") + "Grass Jelly", fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString((checkedListBox1.GetItemCheckState(2).ToString() == "Checked" ? "✅ " : "❌ ") + "Nata de coco", fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString((checkedListBox1.GetItemCheckState(3).ToString() == "Checked" ? "✅ " : "❌ ") + "Whipped cream", fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString((checkedListBox1.GetItemCheckState(4).ToString() == "Checked" ? "✅ " : "❌ ") + "Choco chip", fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString((checkedListBox1.GetItemCheckState(5).ToString() == "Checked" ? "✅ " : "❌ ") + "Oreo", fontRegular, brush, startX, startY + offset);
-            offset += 20;
-            graphics.DrawString("------------------------------------", fontRegular, brush, startX, startY + offset);
-
-            // Total harga
-            offset += 20;
-            graphics.DrawString("Harga : " + calculateCoffeePrice().ToString("C"), fontTitle, brush, startX, startY + offset);
-
-            // Tanda terima kasih
-            offset += 40;
-            graphics.DrawString("Terima kasih atas kunjungan Anda!", fontRegular, brush, startX, startY + offset);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            printPreviewDialog1.Document = printDocument1;
-            ToolStripButton b = new ToolStripButton();
-            b.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            b.Click += printPreview_PrintClick;
-            b.ToolTipText = "Print";
-            b.Text = "Print";
-            ((ToolStrip)(printPreviewDialog1.Controls[1])).Items.RemoveAt(0);
-            ((ToolStrip)(printPreviewDialog1.Controls[1])).Items.Insert(0, b);
-            printPreviewDialog1.ShowDialog();
-        }
-
-        private void printPreview_PrintClick(object sender, EventArgs e)
-        {
-            try
-            {
-                printDialog1.Document = printDocument1;
-                if (printDialog1.ShowDialog() == DialogResult.OK)
+            i += 1;
+            var records = new List<Pelanggan>
                 {
-                    printDocument1.Print();
-                }
-            }
-            catch (Exception ex)
+                    new Pelanggan { Id = i, Nama = textBox1.Text, Alamat = textBox2.Text },
+                };
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
-                MessageBox.Show(ex.Message, ToString());
+                // Don't write the header again.
+                HasHeaderRecord = false,
+            };
+
+            using (var writer = new StreamWriter("../../../pelanggan.csv", true))
+            using (var csv = new CsvWriter(writer, config))
+            {
+                csv.WriteRecords(records);
             }
+            MessageBox.Show("Done!");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (printDialog1.ShowDialog() == DialogResult.OK)
+
+            using (var reader = new StreamReader("../../../pelanggan.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                printDocument1.Print();
+                var record = csv.GetRecords<Pelanggan>().ToList();
+                comboBox1.Items.Clear();
+                foreach (var rec in record)
+                {
+                    i += 1;
+                    comboBox1.Items.Add(rec.Nama);
+                }
+                dataGridView1.DataSource = record;
             }
+
+            MessageBox.Show("Done!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DateTime waktu1 = DateTime.Now;
+            var guid = Guid.NewGuid();
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = false,
+
+            };
+            var records = new List<Order>
+            {
+                new Order {Id=guid, Pelanggan = comboBox1.Text, Item = comboBox2.Text, Jumlah = Convert.ToInt16(numericUpDown1.Value), Waktu=waktu1 },
+            };
+
+            using var writer = new StreamWriter("../../../order.csv", append: true);
+            using var csv = new CsvWriter(writer, config);
+            csv.WriteRecords(records);
+
+            QRCodeGenerator qrGenerator = new();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(guid.ToString(), QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(6);
+            pictureBox1.Image = qrCodeImage;
+
+            MessageBox.Show("Done!");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
