@@ -16,6 +16,7 @@ namespace ProjectDotNet
         public FormMain()
         {
             InitializeComponent();
+            _movieEntities = new movieEntities();
         }
 
         private readonly movieEntities _movieEntities;
@@ -34,7 +35,7 @@ namespace ProjectDotNet
                 AssociatedData = userUuidBytes
             };
             var hash = argon2.GetBytes(128);
-            string hashedValue = Encoding.ASCII.GetString(hash);
+            string hashedValue = Convert.ToBase64String(hash);
             return hashedValue;
         }
 
@@ -46,7 +47,7 @@ namespace ProjectDotNet
             var newRecord = new tblUser()
             {
                 username = vUsername,
-                password = vPass,
+                password = hashing(vUsername, vPass),
                 phone = vPhone
             };
             _movieEntities.tblUser.Add(newRecord);
