@@ -26,5 +26,6 @@ namespace ProjectDotNet
         }
     
         public virtual DbSet<tblMovie> tblMovie { get; set; }
+        public virtual DbSet<tblUser> tblUser { get; set; }
     }
 }
