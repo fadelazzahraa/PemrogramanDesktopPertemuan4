@@ -50,6 +50,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(543, 150);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -75,6 +76,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.button2.TabIndex = 8;
             this.button2.Text = "➕ Tambah";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -84,6 +86,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.button1.TabIndex = 7;
             this.button1.Text = "💾 Simpan ke Database";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormKelolaUser
             // 

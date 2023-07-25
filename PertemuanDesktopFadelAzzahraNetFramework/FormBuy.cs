@@ -42,12 +42,12 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             FadelAzzahraDBConnection fadelazzahraDBConnection = new FadelAzzahraDBConnection();
             connection = fadelazzahraDBConnection.ConnectDBConnection();
             connection.Open();
-            products = InitializeProductDatabase(connection);
+            products = InitializeProductDatabase();
             connection.Close();
 
             foreach (Product product in products)
             {
-                listBox1.Items.Add($"[{product.Category}] {product.Name}");
+                listBox1.Items.Add($"[{product.Category}] {product.Name} - Rp{product.Price}");
             }
             listBox1.SelectedIndex = 0;
             numericUpDown1.Value = 0;
@@ -56,7 +56,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
 
         }
 
-        private List<Product> InitializeProductDatabase(MySqlConnection connection)
+        private List<Product> InitializeProductDatabase()
         {
             List<Product> temp = new List<Product>();
 
@@ -136,13 +136,15 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
                 }
             }
 
-            products = InitializeProductDatabase(connection);
+            products = InitializeProductDatabase();
             listBox1.Items.Clear();
             foreach (Product product in products)
             {
-                listBox1.Items.Add($"[{product.Category}] {product.Name}");
+                listBox1.Items.Add($"[{product.Category}] {product.Name} - Rp{product.Price}");
             }
-
+            listBox1.SelectedIndex = 0;
+            numericUpDown1.Value = 0;
+            UpdatePrice();
             connection.Close();
         }
 

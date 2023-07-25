@@ -10,11 +10,13 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
     {
         public User(string username, string password, string role)
         {
+            id = 0;
             _username = username;
             _password = password;
             _role = role;
         }
 
+        public int id;
         private string _username;
         private string _password;
         private string _role;

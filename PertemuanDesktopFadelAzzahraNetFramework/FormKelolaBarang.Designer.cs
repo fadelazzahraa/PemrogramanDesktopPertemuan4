@@ -64,6 +64,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(543, 154);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // openFileDialog1
             // 
@@ -89,6 +90,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.button2.TabIndex = 6;
             this.button2.Text = "➕ Tambah";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormKelolaBarang
             // 

@@ -8,6 +8,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
 {
 	internal class Product
 	{
+		public int id;
 		private string _name;
 		private int _stock;
 		private int _price;
@@ -15,6 +16,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
 
         public Product(String name, int stock, int price, String category)
         {
+			this.id = 0;
 			this._name = name;
 			this._stock = stock;
 			this._price = price;
