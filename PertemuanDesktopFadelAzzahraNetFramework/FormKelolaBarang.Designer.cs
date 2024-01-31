@@ -62,7 +62,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.dataGridView1.Location = new System.Drawing.Point(10, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 154);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 150);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -73,7 +73,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(401, 12);
+            this.button1.Location = new System.Drawing.Point(400, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 20);
             this.button1.TabIndex = 5;
@@ -84,7 +84,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(331, 12);
+            this.button2.Location = new System.Drawing.Point(330, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 20);
             this.button2.TabIndex = 6;
@@ -97,11 +97,12 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(564, 208);
+            this.ClientSize = new System.Drawing.Size(563, 204);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
+            this.MinimumSize = new System.Drawing.Size(579, 243);
             this.Name = "FormKelolaBarang";
             this.Text = "Kelola Barang";
             this.Load += new System.EventHandler(this.FormKelolaBarang_Load);

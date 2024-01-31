@@ -70,6 +70,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(331, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(64, 20);
@@ -80,6 +81,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(401, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 20);
@@ -98,6 +100,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.MinimumSize = new System.Drawing.Size(579, 243);
             this.Name = "FormKelolaUser";
             this.Text = "Kelola User";
             this.Load += new System.EventHandler(this.FormKelolaUser_Load);

@@ -211,6 +211,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(387, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(135, 137);
@@ -221,6 +222,7 @@ namespace PemrogramanDesktopFadelAzzahraNetFramework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(610, 487);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
